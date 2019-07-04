@@ -1,0 +1,40 @@
+{
+  "name": "summary-menu",
+  "version": "1.0.0",
+  "description": "the summary and menu components for Open table clone coding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:react": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sigsa-io/summary-menu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sigsa-io/summary-menu/issues"
+  },
+  "homepage": "https://github.com/sigsa-io/summary-menu#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babelrc": "0.0.2",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jquery": "^3.4.1",
+    "mongoose": "^5.6.3",
+    "npm": "^6.10.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

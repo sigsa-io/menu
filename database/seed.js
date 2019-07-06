@@ -1,7 +1,8 @@
-const db  = require('./index.js');
 const Menu = require('./Restaurants.js');
-// const restaurantsData = require('./restaurantsData.js');
+const db  = require('./index.js');
 const faker = require('faker');
+
+
 
 
 const restaurantsData = [   
@@ -430,6 +431,8 @@ for (let i = 0; i < restaurantsData.length; i++) {
 
 const insertSampleMenus = function() {
     Menu.create(restaurantsData)
+      .then(() => db.disconnect())
+      .catch((e) => console.log(e))
 };
 
 insertSampleMenus();

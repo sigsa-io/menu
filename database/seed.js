@@ -2,9 +2,6 @@ const Menu = require('./Restaurants.js');
 const db  = require('./index.js');
 const faker = require('faker');
 
-
-
-
 const restaurantsData = [   
     {
        "restaurant_name": "1770 House",
@@ -427,12 +424,16 @@ for (let i = 0; i < restaurantsData.length; i++) {
     }
 }
 
-// console.log(restaurantsData[99]);
-
 const insertSampleMenus = function() {
     Menu.create(restaurantsData)
-      .then(() => db.disconnect())
-      .catch((e) => console.log(e))
+      .then(() => {
+         console.log('seeding success!');
+         db.close(); 
+      })
+      .catch(() => {
+         console.log('error');
+         db.close();
+      });
 };
 
 insertSampleMenus();

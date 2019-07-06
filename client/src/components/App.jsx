@@ -6,6 +6,9 @@ import menuCollapse from './menuCollapse';
 class App extends React.Component {
     constructor(props) {
       super(props);
+      this.state = {
+          
+      }
       
     }
 

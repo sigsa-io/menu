@@ -410,6 +410,7 @@ for (let i = 0; i < restaurantsData.length; i++) {
     if (restaurantsData[i]['menu'] === undefined) {
         restaurantsData[i]['menu'] = [];
     }
+    restaurantsData[i]['menu_category'] = ['dinner', 'lunch', 'dessert'];
     for (let j = 0; j < 5; j++) {
         var menuCategory = ['dinner', 'lunch', 'dessert'];
         var menuHeader = ['eaque', 'velit', 'numquam'];

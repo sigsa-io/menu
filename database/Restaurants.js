@@ -6,6 +6,7 @@ mongoose.Promise = global.Promise;
 const menuSchema = new mongoose.Schema({
   restaurant_name: String,
   restaurant_id: String,
+  menu_category: [String],
   menu: [{
     menu_id: Number,
     menu_header: String,

@@ -1,5 +1,5 @@
 import React from 'react';
-// import MenuEntry from './MenuEntry';
+import MenuEntry from './MenuEntry.jsx';
 
 const MenuCategoryButtons = props => (
   props.menuHeaders.map(menuHeader => (
@@ -8,8 +8,7 @@ const MenuCategoryButtons = props => (
         <h3 className="menu-header-title">{menuHeader.header_name}</h3>
       </div>
       <div>
-        {/* <MenuEntry /> */}
-        YASS
+        <MenuEntry entries={menuHeader.entries} />
       </div>
     </div>
   ))

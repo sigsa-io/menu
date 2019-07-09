@@ -46,7 +46,6 @@ class App extends React.Component {
     for (let i = 0; i < menuCategory.length; i += 1) {
       if (menuCategory[i].submenu_name === currentSubMenu) {
         menuHeaders = menuCategory[i].headers || [];
-        console.log(menuHeaders);
       }
     }
     return (

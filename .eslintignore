@@ -1,0 +1,4 @@
+.eslint*
+**/node_modules
+**/client/dist/bundle.js
+**/database/seed.js

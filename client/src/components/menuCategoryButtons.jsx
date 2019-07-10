@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 const MenuCategoryButtons = ({ restaurants, currentSubMenu, handleMenuCategoryClick }) => (
   <div>
@@ -9,5 +10,11 @@ const MenuCategoryButtons = ({ restaurants, currentSubMenu, handleMenuCategoryCl
     ))}
   </div>
 );
+
+MenuCategoryButtons.propTypes = {
+  restaurants: propTypes.instanceOf(Array).isRequired,
+  currentSubMenu: propTypes.string.isRequired,
+  handleMenuCategoryClick: propTypes.func.isRequired,
+};
 
 export default MenuCategoryButtons;

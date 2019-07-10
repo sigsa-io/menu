@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 const MenuEntry = ({ entries }) => (
   entries.map(entry => (
@@ -9,5 +10,9 @@ const MenuEntry = ({ entries }) => (
     </div>
   ))
 );
+
+MenuEntry.propTypes = {
+  entries: propTypes.instanceOf(Array).isRequired,
+};
 
 export default MenuEntry;

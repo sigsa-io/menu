@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import MenuEntry from './MenuEntry.jsx';
 
 const MenusByHeaders = ({ menuHeaders }) => (
@@ -13,5 +14,9 @@ const MenusByHeaders = ({ menuHeaders }) => (
     </div>
   ))
 );
+
+MenusByHeaders.propTypes = {
+  menuHeaders: propTypes.instanceOf(Array).isRequired,
+};
 
 export default MenusByHeaders;

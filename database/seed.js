@@ -406,23 +406,37 @@ const restaurantsData = [
   }
 ];
 
+var menuCategory = ['dinner', 'lunch', 'dessert'];
+var menuHeaders = ['eaque', 'velit', 'numquam'];
+
 for (let i = 0; i < restaurantsData.length; i++) {
-    if (restaurantsData[i]['menu'] === undefined) {
-        restaurantsData[i]['menu'] = [];
+
+    if (restaurantsData[i]['menu_category'] === undefined) {
+        restaurantsData[i]['menu_category'] = [];
     }
-    restaurantsData[i]['menu_category'] = ['dinner', 'lunch', 'dessert'];
-    for (let j = 0; j < 5; j++) {
-        var menuCategory = ['dinner', 'lunch', 'dessert'];
-        var menuHeader = ['eaque', 'velit', 'numquam'];
-        let oneMenu = {
-            menu_id : j,
-            menu_header: menuHeader[j % 3],
+    for (let j = 0; j < menuCategory.length; j++) {
+
+      let menuCategoryToAdd = {};
+      menuCategoryToAdd['submenu_name'] = menuCategory[j];
+      menuCategoryToAdd['headers'] = [];
+      for (let k = 0; k < menuHeaders.length; k++) {
+
+        let headersObjToAdd = {};
+        headersObjToAdd['header_name'] = menuHeaders[k];
+        
+        headersObjToAdd['entries'] = [];
+        //make each entry menus
+        for (let w = 0; w < 6; w++) {
+          let oneEntry = {
             menu_name: faker.lorem.words(),
             menu_price: faker.commerce.price(),
             menu_description: faker.lorem.sentence(),
-            menu_category: menuCategory[j % 3],
+          }
+          headersObjToAdd['entries'].push(oneEntry);
         }
-        restaurantsData[i]['menu'].push(oneMenu);
+        menuCategoryToAdd['headers'].push(headersObjToAdd); 
+      }
+      restaurantsData[i]['menu_category'].push(menuCategoryToAdd);
     }
 }
 

@@ -52,10 +52,10 @@ class App extends React.Component {
     let menuContainerClassName;
 
     if (!currentCollapseToggle) {
-      collapseButton = <button className="button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
+      collapseButton = <button className="button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
       menuContainerClassName = 'menus-container-collapsed__wHgxK8Fc';
     } else {
-      collapseButton = <button className="button-floats__TXcpIDKw button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
+      collapseButton = <button className="button-floats__TXcpIDKw button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
       menuContainerClassName = 'menu-container';
     }
 
@@ -71,7 +71,7 @@ class App extends React.Component {
                 handleMenuCategoryClick={this.handleMenuCategoryClick}
               />
             </div>
-            <div className={menuContainerClassName}>
+            <div className={menuContainerClassName} id="menu-container-id">
               <MenusByHeaders menuHeaders={menuHeaders} />
               <div className="gradient__1A38iyWn" />
             </div>

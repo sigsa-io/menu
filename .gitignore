@@ -6,6 +6,3 @@ node_modules
 
 ##complied dist##
 client/dist/bundle.js
-
-##test##
-test

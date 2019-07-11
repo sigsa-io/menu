@@ -2,6 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import MenuEntry from './MenuEntry.jsx';
 
+
 const MenusByHeaders = ({ menuHeaders }) => (
   menuHeaders.map(menuHeader => (
     <div className="menu-section__14yfICNP">

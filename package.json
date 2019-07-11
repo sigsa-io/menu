@@ -4,7 +4,7 @@
   "description": "the summary and menu components for Open table clone coding",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "dev:server": "nodemon server/index.js",
     "dev:react": "webpack -d --watch",
     "seed": "node ./database/seed.js",

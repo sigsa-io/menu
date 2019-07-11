@@ -1,7 +1,8 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
-const MenuEntry = props => (
-  props.entries.map(entry => (
+const MenuEntry = ({ entries }) => (
+  entries.map(entry => (
     <div className="menu-item__2ZxJOnTY">
       <div className="menu-price__1KiCimAr">{entry.menu_price}</div>
       <div className="entry-item-name">{entry.menu_name}</div>
@@ -9,5 +10,9 @@ const MenuEntry = props => (
     </div>
   ))
 );
+
+MenuEntry.propTypes = {
+  entries: propTypes.instanceOf(Array).isRequired,
+};
 
 export default MenuEntry;

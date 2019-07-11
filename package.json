@@ -7,7 +7,8 @@
     "test": "jest",
     "dev:server": "nodemon server/index.js",
     "dev:react": "webpack -d --watch",
-    "seed": "node ./database/seed.js"
+    "seed": "node ./database/seed.js",
+    "lint": "eslint --ext .js --ext .jsx ."
   },
   "repository": {
     "type": "git",
@@ -40,11 +41,14 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "babel-jest": "^24.8.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jquery": "^3.4.1",
     "mongoose": "^5.6.3",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "sinon": "^7.3.2"
   }
 }

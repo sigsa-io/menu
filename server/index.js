@@ -10,9 +10,9 @@ app.use(express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 app.get('/api/menuData', (req, res) => (
   Restaurants.find((err, data) => {
     if (err) {
-      console.log(err);
+      return console.log(err);
     }
-    res.send(data);
+    return res.send(data);
   })
 ));
 

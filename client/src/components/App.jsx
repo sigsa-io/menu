@@ -1,11 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-// eslint-disable-next-line import/extensions
 import MenuCategoryButtons from './MenuCategoryButtons.jsx';
-// eslint-disable-next-line import/extensions
 import MenusByHeaders from './MenusByHeaders.jsx';
-// // eslint-disable-next-line import/extensions
-// import MenuCollapse from './MenuCollapse.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,8 +10,6 @@ class App extends React.Component {
       restaurantData: {},
       currentSubMenu: '',
       currentCollapseToggle: false,
-      // menu : '',
-      // menuHeaders: [],
     };
     this.handleMenuCategoryClick = this.handleMenuCategoryClick.bind(this);
     this.handleCollapseButtonClick = this.handleCollapseButtonClick.bind(this);
@@ -33,7 +27,6 @@ class App extends React.Component {
   }
 
   handleMenuCategoryClick(e) {
-    console.log(e.target.id);
     this.setState({ currentSubMenu: e.target.id });
   }
 
@@ -48,12 +41,6 @@ class App extends React.Component {
     const { currentSubMenu } = this.state;
     const { currentCollapseToggle } = this.state;
     const menuCategory = restaurantData.menu_category || [];
-    // const currentMenuItems = restaurantData.menu_category.headers || [];
-    // let menuCategory = [];
-    // if (restaurantData.menu_category) {
-    //   menuCategory = restaurantData.menu_category;
-    // }
-    // const menuCategoryHeader = menuCategory[0].headers || [];
     let menuHeaders = [];
     for (let i = 0; i < menuCategory.length; i += 1) {
       if (menuCategory[i].submenu_name === currentSubMenu) {
@@ -65,13 +52,12 @@ class App extends React.Component {
     let menuContainerClassName;
 
     if (!currentCollapseToggle) {
-      collapseButton = <button className="button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
+      collapseButton = <button className="button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
       menuContainerClassName = 'menus-container-collapsed__wHgxK8Fc';
     } else {
-      collapseButton = <button className="button-floats__TXcpIDKw button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
+      collapseButton = <button className="button-floats__TXcpIDKw button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
       menuContainerClassName = 'menu-container';
     }
-
 
     return (
       <div className="restaurant-menu">
@@ -85,9 +71,7 @@ class App extends React.Component {
                 handleMenuCategoryClick={this.handleMenuCategoryClick}
               />
             </div>
-            {/* conditional rendering needed */}
-            {/* className = 'menu-container-collapsed' || 'menu-container' */}
-            <div className={menuContainerClassName}>
+            <div className={menuContainerClassName} id="menu-container-id">
               <MenusByHeaders menuHeaders={menuHeaders} />
               <div className="gradient__1A38iyWn" />
             </div>

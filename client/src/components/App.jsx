@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import MenuCategoryButtons from './MenuCategoryButtons';
 import MenusByHeaders from './MenusByHeaders';
+import style from './style/App.style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -53,19 +54,19 @@ class App extends React.Component {
     let menuContainerClassName;
 
     if (!currentCollapseToggle) {
-      collapseButton = <button className="button-static button-shade button-base" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
-      menuContainerClassName = 'menus-container-collapsed';
+      collapseButton = <button className={`${style.button_static} ${style.button_shade} ${style.button_base}`} type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
+      menuContainerClassName = style.menus_container_collapsed;
     } else {
-      collapseButton = <button className="button-floats button-static button-shade button-base" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
-      menuContainerClassName = 'menus-container';
+      collapseButton = <button className={`${style.button_floats} ${style.button_static} ${style.button_shade} ${style.button_base}`} type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
+      menuContainerClassName = style.menus_container;
     }
 
     return (
-      <div className="restaurant-menu">
-        <h2 className="section-header">Menu</h2>
+      <div className={`${style.restaurant_menu}`}>
+        <h2 className={`${style.section_header}`}>Menu</h2>
         <div>
           <div>
-            <div className="menu-nav-bar">
+            <div className={`${style.menu_nav_bar}`}>
               <MenuCategoryButtons
                 restaurants={menuCategory}
                 currentSubMenu={currentSubMenu}
@@ -74,9 +75,9 @@ class App extends React.Component {
             </div>
             <div className={menuContainerClassName} id="menu-container-id">
               <MenusByHeaders menuHeaders={menuHeaders} />
-              <div className="gradient-menu-effect" />
+              <div className={`${style.gradient_menu_effect}`} />
             </div>
-            <div className="button-center-text">
+            <div className={`${style.button_center_text}`}>
               {collapseButton}
             </div>
           </div>

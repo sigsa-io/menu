@@ -1,12 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import style from './style/MenuEntry.style.css';
 
 const MenuEntry = ({ entries }) => (
-  entries.map(({ menu_price, menu_name, menu_description }) => (
-    <div className="menu-entry-item">
-      <div className="menu-entry-price">{menu_price}</div>
-      <div className="entry-item-name">{menu_name}</div>
-      <div className="menu-entry-description">{menu_description}</div>
+  entries.map(entry => (
+    <div className={style.menu_entry_item}>
+      <div className={style.menu_entry_price}>{entry.menu_price}</div>
+      <div className={style.entry_item_name}>{entry.menu_name}</div>
+      <div className={style.menu_entry_description}>{entry.menu_description}</div>
     </div>
   ))
 );

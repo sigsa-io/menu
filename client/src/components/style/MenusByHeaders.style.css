@@ -1,0 +1,30 @@
+.menu_items {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 32px;
+  -moz-column-gap: 32px;
+  column-gap: 32px
+}
+
+.menu_section_overall {
+  padding-top: 16px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #d8d9db
+}
+
+.menu_section_overall:last-child {
+  border-bottom: none
+}
+
+.menu_section_header {
+  margin: 0;
+  margin-bottom: 16px
+}
+
+.menu_section_title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500
+}

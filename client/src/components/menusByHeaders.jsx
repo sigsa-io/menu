@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import MenuEntry from './MenuEntry.jsx';
+import MenuEntry from './MenuEntry';
 
 
 const MenusByHeaders = ({ menuHeaders }) => (

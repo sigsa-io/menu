@@ -16,7 +16,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3002/api/menuData/')
+    const restaurantId = window.location.pathname.split('/')[1];
+    axios.get(`/menuData/${restaurantId}`)
       .then((res) => {
         const restaurantsData = res.data;
         this.setState({

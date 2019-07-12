@@ -5,8 +5,8 @@ const MenuCategoryButtons = ({ restaurants, currentSubMenu, handleMenuCategoryCl
   <div className="submenu-buttons-nav">
     { restaurants.map(category => (
       category.submenu_name === currentSubMenu
-        ? <button className="button-menu-link-active__3KrRGgFS button-menu-link__1j5RFIKk secondary__37FrTgAl base__1GdpdUto" type="button" id={category.submenu_name} onClick={handleMenuCategoryClick}>{category.submenu_name}</button>
-        : <button className="button-menu-link__1j5RFIKk secondary__37FrTgAl base__1GdpdUto" type="button" id={category.submenu_name} onClick={handleMenuCategoryClick}>{category.submenu_name}</button>
+        ? <button className="submenu-header-button-active submenu-header-button-link submenu-secondary-cursor submenu-header-outline" type="button" id={category.submenu_name} onClick={handleMenuCategoryClick}>{category.submenu_name}</button>
+        : <button className="submenu-header-button-link submenu-secondary-cursor submenu-header-outline" type="button" id={category.submenu_name} onClick={handleMenuCategoryClick}>{category.submenu_name}</button>
     ))}
   </div>
 );

@@ -7,7 +7,7 @@ const port = 3002;
 
 app.use('/:restaurant_id/menus', express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 
-app.get('/api/menuData/', (req, res) => (
+app.get('/menuData/:restaurant_id', (req, res) => (
   Restaurants.find((err, data) => {
     if (err) {
       return console.log(err);

@@ -53,19 +53,19 @@ class App extends React.Component {
     let menuContainerClassName;
 
     if (!currentCollapseToggle) {
-      collapseButton = <button className="button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
-      menuContainerClassName = 'menus-container-collapsed__wHgxK8Fc';
+      collapseButton = <button className="button-static button-shade button-base" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
+      menuContainerClassName = 'menus-container-collapsed';
     } else {
-      collapseButton = <button className="button-floats__TXcpIDKw button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
-      menuContainerClassName = 'menu-container';
+      collapseButton = <button className="button-floats button-static button-shade button-base" type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
+      menuContainerClassName = 'menus-container';
     }
 
     return (
       <div className="restaurant-menu">
-        <h2 className="sectionHeader__ByIiO8gW">Menu</h2>
+        <h2 className="section-header">Menu</h2>
         <div>
           <div>
-            <div className="menu-nav__1DnmIqFZ">
+            <div className="menu-nav-bar">
               <MenuCategoryButtons
                 restaurants={menuCategory}
                 currentSubMenu={currentSubMenu}
@@ -74,7 +74,7 @@ class App extends React.Component {
             </div>
             <div className={menuContainerClassName} id="menu-container-id">
               <MenusByHeaders menuHeaders={menuHeaders} />
-              <div className="gradient__1A38iyWn" />
+              <div className="gradient-menu-effect" />
             </div>
             <div className="button-center-text">
               {collapseButton}

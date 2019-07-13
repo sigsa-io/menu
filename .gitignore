@@ -1,11 +1,13 @@
-
 ##npm##
-npm
-npm-debug.log
 node_modules
 
 ##complied dist##
 client/dist/bundle.js
 
 ##test##
+<<<<<<< HEAD
 coverage
+=======
+coverage
+
+>>>>>>> 43d3c9a73b72bea61e2930f34196b987468ba9df

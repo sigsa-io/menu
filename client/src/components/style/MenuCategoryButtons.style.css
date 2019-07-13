@@ -1,0 +1,32 @@
+.submenu_header_outline {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #2d333f;
+  border: 1px solid #d8d9db;
+  border-radius: 2px;
+  padding: 8px 16px;
+  display: inline-block;
+  box-sizing: border-box
+}
+
+.submenu_header_outline:focus {
+  outline: 0
+}
+
+.submenu_secondary_cursor {
+  cursor: pointer
+}
+
+.submenu_header_button_link {
+  margin-right: 16px;
+  background-color: #fff;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #2d333f
+}
+
+.submenu_header_button_active {
+  border: 2px solid #da3743;
+  padding: calc(8px - 1px) calc(16px - 1px)
+}

@@ -1,11 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-// eslint-disable-next-line import/extensions
-import MenuCategoryButtons from './MenuCategoryButtons.jsx';
-// eslint-disable-next-line import/extensions
-import MenusByHeaders from './MenusByHeaders.jsx';
-// // eslint-disable-next-line import/extensions
-// import MenuCollapse from './MenuCollapse.jsx';
+import MenuCategoryButtons from './MenuCategoryButtons';
+import MenusByHeaders from './MenusByHeaders';
+import style from './style/App.style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,15 +11,14 @@ class App extends React.Component {
       restaurantData: {},
       currentSubMenu: '',
       currentCollapseToggle: false,
-      // menu : '',
-      // menuHeaders: [],
     };
     this.handleMenuCategoryClick = this.handleMenuCategoryClick.bind(this);
     this.handleCollapseButtonClick = this.handleCollapseButtonClick.bind(this);
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3002/api/menuData/')
+    const restaurantId = window.location.pathname.split('/')[1];
+    axios.get(`/menuData/${restaurantId}`)
       .then((res) => {
         const restaurantsData = res.data;
         this.setState({
@@ -33,7 +29,6 @@ class App extends React.Component {
   }
 
   handleMenuCategoryClick(e) {
-    console.log(e.target.id);
     this.setState({ currentSubMenu: e.target.id });
   }
 
@@ -48,12 +43,6 @@ class App extends React.Component {
     const { currentSubMenu } = this.state;
     const { currentCollapseToggle } = this.state;
     const menuCategory = restaurantData.menu_category || [];
-    // const currentMenuItems = restaurantData.menu_category.headers || [];
-    // let menuCategory = [];
-    // if (restaurantData.menu_category) {
-    //   menuCategory = restaurantData.menu_category;
-    // }
-    // const menuCategoryHeader = menuCategory[0].headers || [];
     let menuHeaders = [];
     for (let i = 0; i < menuCategory.length; i += 1) {
       if (menuCategory[i].submenu_name === currentSubMenu) {
@@ -65,33 +54,30 @@ class App extends React.Component {
     let menuContainerClassName;
 
     if (!currentCollapseToggle) {
-      collapseButton = <button className="button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
-      menuContainerClassName = 'menus-container-collapsed__wHgxK8Fc';
+      collapseButton = <button className={`${style.button_static} ${style.button_shade} ${style.button_base}`} type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>View full menu</button>;
+      menuContainerClassName = style.menus_container_collapsed;
     } else {
-      collapseButton = <button className="button-floats__TXcpIDKw button-static__33d7U9QU ghost__3NHGenYo base__1FLAX22M" type="button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
-      menuContainerClassName = 'menu-container';
+      collapseButton = <button className={`${style.button_floats} ${style.button_static} ${style.button_shade} ${style.button_base}`} type="button" id="collapse-button" onClick={this.handleCollapseButtonClick}>Collapse menu</button>;
+      menuContainerClassName = style.menus_container;
     }
 
-
     return (
-      <div className="restaurant-menu">
-        <h2 className="sectionHeader__ByIiO8gW">Menu</h2>
+      <div className={`${style.restaurant_menu}`}>
+        <h2 className={`${style.section_header}`}>Menu</h2>
         <div>
           <div>
-            <div className="menu-nav__1DnmIqFZ">
+            <div className={`${style.menu_nav_bar}`}>
               <MenuCategoryButtons
                 restaurants={menuCategory}
                 currentSubMenu={currentSubMenu}
                 handleMenuCategoryClick={this.handleMenuCategoryClick}
               />
             </div>
-            {/* conditional rendering needed */}
-            {/* className = 'menu-container-collapsed' || 'menu-container' */}
-            <div className={menuContainerClassName}>
+            <div className={menuContainerClassName} id="menu-container-id">
               <MenusByHeaders menuHeaders={menuHeaders} />
-              <div className="gradient__1A38iyWn" />
+              <div className={`${style.gradient_menu_effect}`} />
             </div>
-            <div className="button-center-text">
+            <div className={`${style.button_center_text}`}>
               {collapseButton}
             </div>
           </div>

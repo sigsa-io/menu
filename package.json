@@ -4,10 +4,11 @@
   "description": "the summary and menu components for Open table clone coding",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "dev:server": "nodemon server/index.js",
     "dev:react": "webpack -d --watch",
-    "seed": "node ./database/seed.js"
+    "seed": "node ./database/seed.js",
+    "lint": "eslint --ext .js --ext .jsx ."
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "babelrc": "0.0.2",
+    "css-loader": "^3.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
@@ -35,16 +37,20 @@
     "eslint-plugin-react": "^7.14.2",
     "jest": "^24.8.0",
     "path": "^0.12.7",
+    "style-loader": "^0.23.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "babel-jest": "^24.8.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jquery": "^3.4.1",
     "mongoose": "^5.6.3",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "sinon": "^7.3.2"
   }
 }

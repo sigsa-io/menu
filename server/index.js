@@ -5,14 +5,14 @@ const Restaurants = require('../database/Restaurants.js');
 const app = express();
 const port = 3002;
 
-app.use(express.static(path.resolve(__dirname, '..', 'client', 'dist')));
+app.use('/:restaurant_id/menus', express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 
-app.get('/api/menuData', (req, res) => (
+app.get('/menuData/:restaurant_id', (req, res) => (
   Restaurants.find((err, data) => {
     if (err) {
-      console.log(err);
+      return console.log(err);
     }
-    res.send(data);
+    return res.send(data);
   })
 ));
 

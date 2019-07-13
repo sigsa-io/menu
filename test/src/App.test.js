@@ -22,15 +22,8 @@ describe('<App />', () => {
   });
 });
 
-describe('</ MenusByHeaders>', () => {
-  it('check MenuEntry components are rendered correctly', () => {
-    const headers = ['dinner', 'lunch', 'appetizer'];
-    const wrapper = shallow(<MenusByHeaders menuHeaders={headers} />);
-    expect(wrapper.find(MenuEntry)).toHaveLength(headers.length);
-  });
-});
 
-describe('</ MenuCategoryButtons>', () => {
+describe('<MenuCategoryButtons />', () => {
   it('check dinner MenuCategoryButtons click functionality', () => {
     const menuCategory = [{ submenu_name: 'dinner' }, { submenu_name: 'lunch' }, { submenu_name: 'appetizer' }];
     let currentSubMenu = 'dinner';
@@ -74,5 +67,26 @@ describe('</ MenuCategoryButtons>', () => {
     );
     wrapper.find('#appetizer').simulate('click');
     expect(wrapper.find('#appetizer').hasClass('button-menu-link-active__3KrRGgFS')).toEqual(true);
+  });
+});
+
+describe('<MenusByHeaders />', () => {
+  it('check MenuEntry components are rendered correctly', () => {
+    const headers = ['dinner', 'lunch', 'appetizer'];
+    const wrapper = shallow(<MenusByHeaders menuHeaders={headers} />);
+    expect(wrapper.find(MenuEntry)).toHaveLength(headers.length);
+  });
+});
+
+describe('<MenuEntry />', () => {
+  const entries = [
+    {menu_name: "name1", menu_price: 35, menu_description: "this is test description1"},
+    {menu_name: "name2", menu_price: 36, menu_description: "this is test description2"},
+    {menu_name: "name3", menu_price: 37, menu_description: "this is test description3"}
+  ];
+  let wrapper = shallow(<MenuEntry entries={entries} />);
+  console.log(wrapper.debug());
+  it('check MenuEntry components are rendered correctly', () => {
+    expect(wrapper.find("div.menu-item__2ZxJOnTY")).toHaveLength(entries.length);
   });
 });

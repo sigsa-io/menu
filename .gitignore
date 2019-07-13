@@ -1,8 +1,9 @@
-
 ##npm##
-npm
-npm-debug.log
 node_modules
 
 ##complied dist##
 client/dist/bundle.js
+
+##test##
+coverage
+

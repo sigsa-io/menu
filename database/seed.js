@@ -415,17 +415,15 @@ for (let i = 0; i < restaurantsData.length; i++) {
         restaurantsData[i]['menu_category'] = [];
     }
     for (let j = 0; j < menuCategory.length; j++) {
-
       let menuCategoryToAdd = {};
       menuCategoryToAdd['submenu_name'] = menuCategory[j];
       menuCategoryToAdd['headers'] = [];
-      for (let k = 0; k < menuHeaders.length; k++) {
 
+      for (let k = 0; k < menuHeaders.length; k++) {
         let headersObjToAdd = {};
         headersObjToAdd['header_name'] = menuHeaders[k];
-        
         headersObjToAdd['entries'] = [];
-        //make each entry menus
+        
         for (let w = 0; w < 6; w++) {
           let oneEntry = {
             menu_name: faker.lorem.words(),

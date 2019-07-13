@@ -9,6 +9,7 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR,
   },
+  resolve: { extensions: ['.js', '.jsx'] },
   module: {
     rules: [
       {
@@ -19,6 +20,21 @@ module.exports = {
         query: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
+      },
+      {
+        test: /\.css/,
+        include: SRC_DIR,
+        use: [{
+          loader: 'style-loader',
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              localIdentName: '[local]__[hash:base64:5]',
+            },
+          },
+        }],
       },
     ],
   },

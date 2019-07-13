@@ -1,14 +1,15 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import MenuEntry from './MenuEntry.jsx';
+import MenuEntry from './MenuEntry';
+import style from './style/MenusByHeaders.style.css';
 
 const MenusByHeaders = ({ menuHeaders }) => (
   menuHeaders.map(menuHeader => (
-    <div className="menu-section__14yfICNP">
-      <div className="menu-section-header__3nfLpHEA">
-        <h3 className="menu-section-title__22Q2IFWX">{menuHeader.header_name}</h3>
+    <div className={style.menu_section_overall}>
+      <div className={style.menu_section_header}>
+        <h3 className={style.menu_section_title}>{menuHeader.header_name}</h3>
       </div>
-      <div className="menu-items__2DRnPKGV">
+      <div className={style.menu_items}>
         <MenuEntry entries={menuHeader.entries} />
       </div>
     </div>

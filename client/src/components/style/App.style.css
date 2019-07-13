@@ -1,0 +1,97 @@
+.restaurant_menu {
+  font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  -webkit-font-smoothing: antialiased;
+  width: 577px;
+  margin: 0 1rem;
+  -webkit-locale: "en";
+  padding: 0 1rem;
+  margin-left: 90px;
+  margin-right: 90px;
+  overflow: hidden;
+  display: block;
+}
+
+.section_header {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #2d333f;
+  margin: 0 0 16px 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between
+}
+
+.menu_nav_bar {
+  margin-top: calc(-1 * 16px);
+  padding-bottom: 16px;
+  border-bottom: 1px solid #d8d9db
+}
+
+.menus_container {
+  overflow: hidden;
+  position: relative;
+  width:100%;
+  display:block;
+  
+}
+
+.menus_container_collapsed {
+  height: 400px;
+  overflow: hidden;
+  position: relative
+}
+
+.menus_container_collapsed>.gradient_menu_effect {
+  content: "";
+  z-index:10;
+  display:block;
+  position:absolute;
+  height:200px;
+  left:0;bottom:0;
+  width:100%;
+  background-image: -webkit-gradient(linear,left bottom, left top, from(#fff), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+  background-color: rgba(255, 255, 255, .2)
+}
+
+.button_center_text {
+  text-align: center;
+}
+
+.button_base {
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1rem;
+  font-weight: 500;
+  width: 18rem;
+  border-radius: 2px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.button_shade {
+  border: 1px solid #d8d9db;
+  background: 0 0;
+  box-sizing: border-box
+}
+
+.button_shade:hover {
+  border: 2px solid #da3743;
+  padding: calc(1rem - 1px)
+}
+
+.button_static {
+  cursor: pointer;
+  margin: 0 auto 32px auto
+}
+
+.button_floats {
+  position: fixed;
+  bottom: 32px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(51, 51, 51, .2) 0 2px 4px;
+  background-color: #fff
+}

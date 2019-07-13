@@ -4,5 +4,13 @@
      docker:
        - image: circleci/ruby:2.4.1
      steps:
-       - checkout
-       - run: echo "A first hello"
+      - checkout
+      - run:
+        name: Install Dependencies
+        command: npm run dev:react
+      - run:
+        name: seeding data
+        command: npm run seed
+      - run:
+        name: Run Tests
+        command: npm test

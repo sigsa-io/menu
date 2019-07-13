@@ -23,9 +23,6 @@
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # - run:
-      #     name: Install Dependencies
-      #     command: npm run dev:react
       - run:
           name: seeding data
           command: npm run seed

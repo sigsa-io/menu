@@ -15,17 +15,17 @@
             - v1-dependencies-
 
       - run:
-          name: Install npm
-          command: npm install
+          name: run npm
+          command: npm ci
 
       -save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run:
-          name: Install Dependencies
-          command: npm run dev:react
+      # - run:
+      #     name: Install Dependencies
+      #     command: npm run dev:react
       - run:
           name: seeding data
           command: npm run seed

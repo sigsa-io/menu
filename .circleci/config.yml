@@ -5,6 +5,9 @@
        - image: circleci/ruby:2.4.1
      steps:
       - run:
+          name: Install npm
+          command: npm install
+      - run:
           name: Install Dependencies
           command: npm run dev:react
       - run:

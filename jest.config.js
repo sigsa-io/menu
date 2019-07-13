@@ -7,4 +7,10 @@ module.exports = {
   },
   collectCoverage: true,
   coverageReporters: ['json', 'html'],
+  moduleFileExtensions: [
+    'js',
+    'jsx',
+    'json',
+    'node',
+  ],
 };

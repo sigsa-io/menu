@@ -4,8 +4,8 @@ import MenuEntry from './menuEntry';
 import style from './style/MenusByHeaders.style.css';
 
 const MenusByHeaders = ({ menuHeaders }) => (
-  menuHeaders.map(menuHeader => (
-    <div className={style.menu_section_overall}>
+  menuHeaders.map((menuHeader, key) => (
+    <div key={key} className={style.menu_section_overall}>
       <div className={style.menu_section_header}>
         <h3 className={style.menu_section_title}>{menuHeader.header_name}</h3>
       </div>

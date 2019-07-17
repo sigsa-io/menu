@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import MenuCategoryButtons from './menuCategoryButtons.jsx';
-import MenusByHeaders from './menusByHeaders.jsx';
+import MenuCategoryButtons from './MenuCategoryButtons.jsx';
+import MenusByHeaders from './MenusByHeaders.jsx';
 import style from './style/App.style.css';
 
 class App extends React.Component {
@@ -18,6 +18,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const restaurantId = window.location.pathname.split('/')[1];
+    console.log(window.location.pathname);
     axios.get(`/menuData/${restaurantId}`)
       .then((res) => {
         const restaurantsData = res.data;

@@ -1,8 +1,8 @@
 import sinon from 'sinon';
 import App from '../../client/src/components/App';
-import MenuCategoryButtons from '../../client/src/components/MenuCategoryButtons';
-import MenusByHeaders from '../../client/src/components/MenusByHeaders';
-import MenuEntry from '../../client/src/components/MenuEntry';
+import MenuCategoryButtons from '../../client/src/components/menuCategoryButtons';
+import MenusByHeaders from '../../client/src/components/menusByHeaders';
+import MenuEntry from '../../client/src/components/menuEntry';
 // import idObj from 'identity-obj-proxy';
 
 describe('<App />', () => {

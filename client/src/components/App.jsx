@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import MenuCategoryButtons from './menuCategoryButtons';
-import MenusByHeaders from './menusByHeaders';
+import MenuCategoryButtons from './MenuCategoryButtons';
+import MenusByHeaders from './MenusByHeaders';
 import style from './style/App.style.css';
 
 class App extends React.Component {

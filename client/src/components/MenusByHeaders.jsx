@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import MenuEntry from './menuEntry';
+import MenuEntry from './MenuEntry';
 import style from './style/MenusByHeaders.style.css';
 
 const MenusByHeaders = ({ menuHeaders }) => (

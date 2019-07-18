@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  menu:
+    image: cminho921/sigsa.io:menu
+    depends_on:
+      - 'database'
+    ports: 
+      - '8080:8080'
+
+  database:
+    image: mongo:latest

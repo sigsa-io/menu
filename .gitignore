@@ -6,3 +6,6 @@ client/dist/bundle.js
 
 ##test##
 coverage
+
+##aws key pair##
+sigsa_menu_keypair.pem

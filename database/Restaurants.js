@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+//database:27017
 const mongoUri = 'mongodb://database:27017/resdata';
 mongoose.connect(mongoUri, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;

@@ -3,6 +3,8 @@ node_modules
 
 ##complied dist##
 client/dist/bundle.js
+client/dist/bundle.js.br
+client/dist/bundle.js.gz
 
 ##test##
 coverage

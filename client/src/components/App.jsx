@@ -21,9 +21,10 @@ class App extends React.Component {
     axios.get(`/menuData/${restaurantId}`)
       .then((res) => {
         const restaurantsData = res.data;
+        console.log(restaurantsData);
         this.setState({
-          restaurantData: restaurantsData[0],
-          currentSubMenu: restaurantsData[0].menu_category[0].submenu_name,
+          restaurantData: restaurantsData,
+          currentSubMenu: restaurantsData.menu_category[0].submenu_name,
         });
       });
   }
@@ -80,6 +81,7 @@ class App extends React.Component {
             <div className={`${style.button_center_text}`}>
               {collapseButton}
             </div>
+            <div className={`${style.menu_footer}`}></div>
           </div>
         </div>
       </div>

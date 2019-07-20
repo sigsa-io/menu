@@ -1,2 +1,13 @@
 node_module
 npm-debug.log
+
+test
+.circleci
+
+.eslintrc.js
+.eslintignore
+jest.config.js
+
+.dockerignore
+.gitignore
+README.md

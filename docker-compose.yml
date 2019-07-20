@@ -2,7 +2,8 @@ version: '3'
 
 services:
   menu:
-    image: cminho921/sigsa.io:menu
+    # image: cminho921/sigsa.io:menu
+    build: .
     depends_on:
       - 'database'
     ports:
